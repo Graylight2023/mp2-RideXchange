@@ -54,15 +54,30 @@ function sellCar() {
                             </div>`
       
             cardItemContainer.appendChild(newDiv);
-            
+
+
           }
     }
 
     reader.readAsDataURL(file)
 
     // location.reload();
+    
+    carBrand.value = "";
+    carModel.value = "";
+    carColor.value = "";
+    carDescription.value = "";
+    carPhoto.value = "";
+    cardItemContainer.value = "";
+
+    document.getElementById("sellaCarBtn").click();
+
+
 
 };
+
+
+
 
 
 export default sellCar;

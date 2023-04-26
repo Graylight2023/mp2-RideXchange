@@ -55,6 +55,20 @@ function createAccount(e) {
                         users.push(userObj);
                         localStorage.setItem('users', JSON.stringify(users));
                         alert("Account successfuly created");
+
+                        firstName.value="";
+                        middleName.value="";
+                        lastName.value="";
+                        gender.value="";
+                        age.value="";
+                        birthDate.value="";
+                        contactNum.value="";
+                        address.value="";
+                        email.value="";
+                        password.value="";
+                        passwordCopy.value="";
+                        document.getElementById("btnclosecreate").click();
+
                     } else {
                         passwordErr.classList.remove('display-err');
                         setTimeout(() => {

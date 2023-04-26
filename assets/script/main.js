@@ -37,9 +37,54 @@ let cardItemContainer = document.querySelector('.card-item-container');
 let logoutBtn = document.querySelector('#logoutBtn');
 let accountName = document.querySelector('#accountName');
 let accountSession = document.querySelector('#btnlogin');
+let BtnGetStarted = document.querySelector('#BtnGetStarted');
+let BtnProcessSched = document.querySelector('#btnprocesssched');
 
-let accountcheck;
 
+
+function InitiateSchedProcess(){
+
+    let userName = document.querySelector("#userName");
+    let userEmail = document.querySelector('#userEmail');
+    let userDate = document.querySelector('#userDate');
+    let userTime = document.querySelector('#userTime');
+
+
+    let schedData = {
+        userName: userName.value,
+        userEmail: userEmail.value,
+        userDate: userDate.value,
+        userTime: userTime.value,
+
+        }
+
+
+        alert('Schedule Submitted please wait for email confirmation from RideXChange Staff.')
+        let schedDataString = localStorage.getItem('scheds');
+        let scheds = schedDataString ? JSON.parse(schedDataString): [];
+        scheds.push(schedData);
+        localStorage.setItem("scheds", JSON.stringify(scheds));
+  
+
+        userName.value = "";
+        userEmail.value = "";
+        userDate.value = "";
+        userTime.value = "";
+
+        document.getElementById("btnclosesched").click();
+}
+
+
+
+
+
+function goService(){
+    
+    localStorage.setItem("navigation","stepUser");
+    window.location.href = "./services.html#stepUser";
+
+
+}
 
 
 if (accountName) {
@@ -74,6 +119,11 @@ if (loginBtn) loginBtn.addEventListener('click', loginAccount);
 if (sellBtn) sellBtn.addEventListener('click', sellCar);
 if (logoutBtn) logoutBtn.addEventListener('click', logoutAcc);
 if (searchBtn) searchBtn.addEventListener('click', search);
+if (BtnGetStarted) BtnGetStarted.addEventListener('click', goService);
+if (BtnProcessSched) BtnProcessSched.addEventListener('click', InitiateSchedProcess);
+
+
+
 
 
 // append data from json file
@@ -236,6 +286,8 @@ function search() {
     
 
 }
+
+
 
 
 // search car
