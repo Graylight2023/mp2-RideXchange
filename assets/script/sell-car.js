@@ -33,8 +33,7 @@ function sellCar() {
             let cars = carDataString ? JSON.parse(carDataString): [];
             cars.push(carData);
             localStorage.setItem("cars", JSON.stringify(cars));
-        
-          
+                    
             let newDiv = document.createElement('div');
             newDiv.className = "card-item";
             newDiv.innerHTML = `<div class="card-item">
@@ -55,6 +54,16 @@ function sellCar() {
       
             cardItemContainer.appendChild(newDiv);
 
+            
+                carBrand.value = "";
+                carModel.value = "";
+                carColor.value = "";
+                carDescription.value = "";
+                carPhoto.value = "";
+                cardItemContainer.value = "";
+                document.getElementById("sellaCarBtn").click();
+        
+         
 
           }
     }
@@ -63,14 +72,7 @@ function sellCar() {
 
     // location.reload();
     
-    carBrand.value = "";
-    carModel.value = "";
-    carColor.value = "";
-    carDescription.value = "";
-    carPhoto.value = "";
-    cardItemContainer.value = "";
 
-    document.getElementById("sellaCarBtn").click();
 
 
 
