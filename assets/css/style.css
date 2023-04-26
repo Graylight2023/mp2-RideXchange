@@ -405,7 +405,7 @@ li {
 .image-container {
     height: 50vh;
     overflow: hidden;
-    background-image: url("/assets/images/hero-image.jpg");
+    background-image: url("../images/hero-image.jpg");
     background-size: 150%;
     background-position: 80% 30%;
     background-repeat: no-repeat;
@@ -550,7 +550,7 @@ footer {
     }
     .image-container {
         height: 50vh;
-        overflow: hidden;
+        overflow: auto;
         background-image: url("../images/hero-image.jpg");
         background-size: 100%;
         background-position: 50% 30%;
