@@ -405,6 +405,7 @@ li {
 .image-container {
     height: 50vh;
     overflow: hidden;
+    width: auto;
     background-image: url("../images/hero-image.jpg");
     background-size: 150%;
     background-position: 80% 30%;
